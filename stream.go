@@ -21,6 +21,10 @@ type CompletionStream struct {
 	response *http.Response
 }
 
+func SetEmptyMessagesLimit(limit int) {
+	emptyMessagesLimit = limit
+}
+
 func (stream *CompletionStream) Recv() (response CompletionResponse, err error) {
 	emptyMessagesCount := 0
 
